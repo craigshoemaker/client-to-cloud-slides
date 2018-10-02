@@ -1,0 +1,102 @@
+<section [ngClass]="{ 'hero': true, 'is-fullheight': true, 'is-alternate': isAlternate }" id="demo-conflicts-local">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="columns">
+                        <div class="column ">
+
+                            <div class="field">
+                                <div class="columns">
+                                    <div class="column is-four-fifths">
+                                        <p class="control has-icons-left">
+                                            <input class="input is-size-4 local" type="text" id="local-title-box"
+                                                tabindex="-1" [(ngModel)]="title" placeholder="title" style="padding-left:1.25em;">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-thumbtack" style="margin-top:20px;"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="column">
+                                        <a class="button is-size-4" (click)="save($event)"><i class="fas fa-save has-text-grey"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- -->
+
+                            <div *ngIf="showConflictSelection" class="columns local-conflict-result">
+                                <div class="column">
+                                    <div class="card">
+                                        <header class="card-header has-background-grey-lighter">
+                                            <p class="card-header-title has-text-centered">
+                                                Version in database
+                                            </p>
+                                        </header>
+                                        <div class="card-content">
+                                            <div class="content">
+                                                <div>{{ titleDatabase }}</div>
+                                                <div class="has-text-grey-light is-size-7">Revision ID: {{ revDatabase  }}</div>
+                                            </div>
+                                        </div>
+                                        <footer class="card-footer">
+                                            <button class="card-footer-item has-no-border has-no-background-color" (click)="resolveLocalConflict('database')">Select</button>
+                                        </footer>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="card">
+                                        <header class="card-header has-background-grey-lighter">
+                                            <p class="card-header-title has-text-centered">
+                                                Version incoming
+                                            </p>
+                                        </header>
+                                        <div class="card-content">
+                                            <div class="content">
+                                                <div>{{ titleIncoming }}</div>
+                                                <div class="has-text-grey-light is-size-7">Revision ID: {{ revIncoming }}</div>
+                                            </div>
+                                        </div>
+                                        <footer class="card-footer">
+                                            <button class="card-footer-item has-no-border has-no-background-color" (click)="resolveLocalConflict('incoming')">Select</button>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-two-fifths">
+
+                    <div *ngIf="showConflictMessage" class="message is-danger local-conflict-result">
+                        <div class="message-header">
+                            <p><i class="fas fa-exclamation-triangle"></i> Conflict</p>
+                        </div>
+                        <div class="message-body">
+                            <pre><code class="javascript">{{ conflictError }}</code></pre>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showConflictResolved" class="message is-success">
+                        <div class="message-header">
+                            <p><i class="fas fa-check-circle"></i> Success</p>
+                        </div>
+                        <div class="message-body">
+                            <p style="margin-bottom:1.2em;" class="has-text-weight-semibold">The event is now updated
+                                to:</p>
+                            <div class="todo-item">
+                                <i class="fas fa-thumbtack"></i>
+                                {{ titleFinal }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <app-slide-nav-bottom></app-slide-nav-bottom>
+    </div>
+</section>

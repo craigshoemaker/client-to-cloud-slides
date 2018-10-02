@@ -1,0 +1,14 @@
+<section [ngClass]="{ 'hero': true, 'is-fullheight': true, 'is-alternate': isAlternate }" id="demo-crud">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <app-todo-editor source="local" showGetButton="false"></app-todo-editor>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <app-slide-nav-bottom></app-slide-nav-bottom>
+    </div>
+</section>

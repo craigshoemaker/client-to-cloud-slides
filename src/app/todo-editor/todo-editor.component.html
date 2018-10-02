@@ -1,0 +1,36 @@
+<div class="message is-success">
+  <div class="message-header">
+      <p>Todos - (<span *ngIf="!showRemoteLink">local</span>
+        <a *ngIf="showRemoteLink" href="{{ remoteAdminURL }}" tabindex="-1" target="_blank">{{ remoteAdminURL }}</a>)</p>
+  </div>
+  <div class="message-body">
+      <p class="control has-icons-left">
+          <input class="input crud" 
+                  type="text" 
+                  (change)="save($event)"
+                  tabindex="-1"
+                  placeholder="title">
+          <span class="icon is-small is-left">
+              <i class="fas fa-thumbtack"></i>
+          </span>
+      </p>
+      <div class="content push-down-top-sm" id="demo-crud-list">
+        <div *ngFor="let todo of todos">
+          <div class="todo-item">
+            <i class="fas fa-thumbtack"
+              ngxClipboard
+              title="id: {{todo._id}}
+
+rev: {{todo._rev}}"></i>
+            <input type="text" 
+                    class="input has-no-border has-no-background-color"
+                    (change)="save($event, todo._id)"
+                    tabindex="-1"
+                    [value]="todo.title">
+            <i *ngIf="todo.showGetButton && todo.hasConflicts" class="fas fa-bolt has-text-danger" (click)="getConflicts($event, todo._id)" title="Get conflicts"></i>
+            <i *ngIf="todo.showDeleteButton" class="fas fa-trash-alt has-text-grey-light" (click)="delete($event, todo._id)" title="Delete"></i>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

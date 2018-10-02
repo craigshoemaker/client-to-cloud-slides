@@ -1,0 +1,12 @@
+.push-right-sm {
+    margin-right: 8px;
+}
+
+.sync-label {
+    display: inline-block;
+    margin-top: 7px;
+}
+
+label {
+    cursor: pointer;
+}

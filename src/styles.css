@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("styles/bulma.min.css");
+@import url("scripts/highlightjs/styles/github-gist.css");
+@import url("styles/font-awesome/css/all.min.css");
+@import url("styles/global.css");

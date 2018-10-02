@@ -1,0 +1,7 @@
+.todo-item .fa-trash-alt,
+.todo-item .fa-bolt {
+    display: inline-block;
+    font-size: .66em;
+    cursor: pointer;
+    padding-right: 4px;
+}

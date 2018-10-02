@@ -1,0 +1,40 @@
+<section [ngClass]="{ 'hero': true, 'is-fullheight': true, 'is-alternate': isAlternate }" id="sync-conflict-comparer">
+    <div class="hero-body">
+        <div class="container">
+            <div class="column">
+                <button class="button push-right-sm" (click)="sync()" tabindex="-1">Sync</button>
+                <span class="sync-label push-right-sm" *ngIf="isSyncing">Syncing...</span>
+                <button *ngIf="isSyncing" class="button" (click)="syncCancel()" tabindex="-1">Cancel</button>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <app-todo-editor source="local" showGetButton="true" showDeleteButton="false"></app-todo-editor>
+                </div>
+                <div class="column is-half">
+
+                    <div *ngIf="showConflicts" class="message is-warning">
+                        <div class="message-header">
+                            <p>Conflicts</p>
+                        </div>
+                        <div class="message-body">
+                            <table  class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                                <tr *ngFor="let conflict of conflicts">
+                                    <td>
+                                        <div class="has-text-weight-bold is-size-6">{{ conflict.ok.title}}</div>
+                                        <div class="has-text-grey-light is-size-7">rev: {{ conflict.ok._rev }}</div>
+                                    </td>
+                                    <td>
+                                        <button class="button" (click)="resolve($event, conflict.ok)">Select</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <app-slide-nav-bottom></app-slide-nav-bottom>
+    </div>
+</section>

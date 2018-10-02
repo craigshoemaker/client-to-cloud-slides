@@ -1,0 +1,116 @@
+.hide {
+    visibility: hidden;
+}
+
+.none {
+    display: none !important;
+}
+
+.is-alternate {
+    background: #eee;
+}
+
+.is-button-borderless {
+    cursor: pointer;
+    margin: 15px;
+    color: #ccc;
+}
+
+.is-button-borderless:hover {
+    color: #666;
+}
+
+pre {
+    border-radius: 3px;
+}
+
+pre, pre code {
+    background-color: #f8f8f8 !important;
+}
+
+pre code {
+    font-size: 1.25em;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color:#fff;
+    padding: 10px;
+    z-index: 100;
+    border-bottom: #ccc 1px solid;
+}
+
+.remote-server-configuration {
+    position: fixed;
+    top: 20px;
+    right: 5%;
+    z-index: 200;
+    border: #ccc solid 1px;
+}
+
+.top-bar img {
+    margin-top:10px;
+}
+
+.push-down-top-sm {
+    margin-top: 1rem;
+}
+
+#introduction  {
+    color:#fff;
+}
+
+#introduction h1 {
+    font-size: 4rem;
+}
+
+#introduction h2 {
+    font-size: 1.7rem;
+}
+
+#introduction p {
+    margin-top:15px;
+    margin-bottom:15px;
+    line-height: 1.85rem;
+    font-size:1.22rem;
+}
+
+#introduction a {
+    font-size: 1.5rem;
+    color:#ccc;
+}
+
+.is-danger pre,
+.is-danger pre code {
+    background-color:transparent !important;
+}
+
+button.is-link,
+.button .is-link {
+    background-color: transparent;
+    border: 0;
+    text-decoration: underline;
+    color: hsl(204, 86%, 53%);
+    cursor: pointer;
+}
+
+.has-no-border {
+    border:0 !important;
+    box-shadow: none !important;
+}
+
+.has-no-background-color {
+    background-color:transparent !important;
+}
+
+.todo-item .fa-thumbtack {
+    margin-top: 13px;
+    color: #666;
+}
+
+.todo-item .input {
+    width:90%;
+}

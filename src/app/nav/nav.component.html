@@ -1,0 +1,67 @@
+<div class="top-bar">
+  <div class="columns">
+      <div class="column"><img src="/assets/images/client-to-the-cloud-logo.png" alt="Client to the Cloud"></div>
+      <div class="column is-one-third">
+          <div class="columns">
+              <div class="column is-one-fifth">
+                  <button class="button has-no-border has-no-background-color" (click)="toggleConfig($event)"><i class="fas fa-cog has-text-grey-light"></i></button>
+              </div>
+              <div class="column">
+                  <div class="select">
+                      <select (change)="sectionChanged($event)">
+                          <option value="">-- Navigate --</option>
+                          <option value="introduction">Introduction</option>
+                          <option value="">&nbsp;Demos</option>
+                          <option value="demo-crud">&nbsp;- CRUD</option>
+                          <option value="demo-conflicts-local">&nbsp;- Conflicts (local)</option>
+                          <option value="demo-sync">&nbsp;- Sync</option>
+                          <option value="sync-conflict-comparer">&nbsp;- Conflicts during Sync</option>
+                          <option value="">&nbsp;API</option>
+                          <option value="api-init">&nbsp;- Initialization</option>
+                          <option value="api-add">&nbsp;- put (create)</option>
+                          <option value="api-get">&nbsp;- get</option>
+                          <option value="api-update">&nbsp;- put (update)</option>
+                          <option value="api-delete">&nbsp;- delete</option>
+                          <option value="api-sync">&nbsp;- sync</option>
+                          <option value="end">Conclusion</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<section id="remote-server-configuration" *ngIf="showConfig" class="message is-dark remote-server-configuration">
+  <div class="message-header">
+      <p>Remote Server Configuration</p>
+      <button class="delete" aria-label="delete" (click)="toggleConfig($event)"></button>
+  </div>
+  <div class="message-body">
+
+      <p>Load config: <button class="is-link" (click)="setConfig('local')">local</button> | <button class="is-link" (click)="setConfig('azure')">Azure</button></p>
+
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth push-down-top-sm">
+          <tbody>
+              <tr>
+                  <th>Remote host</th>
+                  <td>{{ host }}</td>
+              </tr>
+              <tr>
+                  <th>Port</th>
+                  <td>{{ port }}</td>
+              </tr>
+              <tr>
+                  <th>Username</th>
+                  <td>{{ username }}</td>
+              </tr>
+              <tr>
+                  <th>Password</th>
+                  <td><input disabled class="input has-no-border has-no-background-color" type="password" [value]="password"></td>
+              </tr>
+          </tbody>
+      </table>
+
+      <div class="has-text-centered"><a [href]="adminURL" class="button is-fullwidth has-no-background-color has-no-border" target="_blank">{{ adminURL }}</a></div>
+  </div>
+</section>
