@@ -12,7 +12,9 @@ export class ApiInitComponent implements OnInit {
 
   code = '';
 
-  constructor(private codeService: CodeService, private config: ConfigService, private messenger: MessageService) {
+  constructor(private codeService: CodeService,
+              private config: ConfigService,
+              private messenger: MessageService) {
     this.messenger.subscribe(this.messenger.events.config.loaded, () => {
       this.bind();
     });

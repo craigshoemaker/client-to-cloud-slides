@@ -14,7 +14,7 @@ setTimeout(() => {
     if (hljs && hljs.initHighlightingOnLoad) {
         hljs.initHighlightingOnLoad();
     }
-}, 800);
+}, 1000);
 
 var api = {
 
@@ -43,32 +43,33 @@ const craig = await localDB.get('craig');
 
     add: async () => {
 // ---
-const event = {
+const user = {
     _id: 'craig',
     twitter: 'craigshoemaker'
 };
 
-const response = await localDB.put(event);
+const response = await localDB.put(user);
 // ---
         console.log(response);
     },
 
     update: async() => {
 // ---
-const craig = await localDB.get('craig');
-console.log(craig);
+const user = await localDB.get('craig');
 
-craig.github = 'craigshoemaker';
+console.log(user);
 
-const response = await localDB.put(craig);
+user.github = 'craigshoemaker';
+
+const response = await localDB.put(user);
 // ---
         console.log(response);
     },
 
     delete: async () => {
 // ---
-const craig = await localDB.get('craig');
-const response = await localDB.remove(craig);
+const user = await localDB.get('craig');
+const response = await localDB.remove(user);
 // ---
         console.log(response);
     },

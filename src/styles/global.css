@@ -114,3 +114,7 @@ button.is-link,
 .todo-item .input {
     width:90%;
 }
+
+.hero-body code {
+    font-size:  1.25rem;
+}
