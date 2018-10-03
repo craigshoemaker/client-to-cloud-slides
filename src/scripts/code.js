@@ -76,7 +76,12 @@ const response = await localDB.remove(user);
 
     sync: () => {
 // ---
-const syncer = localDB.sync(remoteDB, { live: true, retry: true });
+const options = {
+    live: true,
+    retry: true
+};
+
+const syncer = localDB.sync(remoteDB, options);
 
 syncer.on('change', (e) => { console.log('change', e); });
 syncer.on('paused', (e) => { console.log('paused', e); });
@@ -86,6 +91,45 @@ syncer.on('complete', (e) => { console.log('complete', e); });
 syncer.on('error', (e) => { console.log('error', e); });
 
 // syncer.cancel();
+// ---
+    },
+
+    getAll: async () => {
+// ---
+const options = {
+    include_docs: true,
+    conflicts: true
+};
+
+const response = await localDB.allDocs(options);
+// response.rows;
+// ---
+        console.log(response);
+
+        return response.rows;
+    },
+
+    resolveEventualConflict: async (id, winningRevId) => {
+// ---
+const options = {
+    conflicts: true
+};
+
+const todo = await localDB.get(id, options);
+
+let revIds = todo._conflicts;
+revIds.push(todo._rev);
+revIds = revIds.filter(conflictId => conflictId !== winningRevId);
+
+const conflicts = revIds.map(rev => {
+    return {
+        _id: todo._id,
+        _rev: rev,
+        _deleted: true
+    };
+});
+
+const response = await localDB.bulkDocs(conflicts);
 // ---
     }
 

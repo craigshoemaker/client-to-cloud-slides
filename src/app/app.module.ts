@@ -20,6 +20,8 @@ import { ApiAddComponent } from './api-add/api-add.component';
 import { ApiUpdateComponent } from './api-update/api-update.component';
 import { ApiDeleteComponent } from './api-delete/api-delete.component';
 import { ApiSyncComponent } from './api-sync/api-sync.component';
+import { ApiAlldocsComponent } from './api-alldocs/api-alldocs.component';
+import { ApiBulkdocsComponent } from './api-bulkdocs/api-bulkdocs.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ApiSyncComponent } from './api-sync/api-sync.component';
     ApiAddComponent,
     ApiUpdateComponent,
     ApiDeleteComponent,
-    ApiSyncComponent
+    ApiSyncComponent,
+    ApiAlldocsComponent,
+    ApiBulkdocsComponent
   ],
   imports: [
     BrowserModule,

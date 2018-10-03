@@ -1,0 +1,26 @@
+<section [ngClass]="{ 'hero': true, 'is-fullheight': true, 'is-alternate': isAlternate }"
+          id="api-alldocs">
+  <div class="hero-body">
+      <div class="container">
+          <div class="columns">
+              <div class="column">
+                  <h1 class="title">
+                    <kbd>allDocs</kbd>
+                  </h1>
+                  <h2 class="subtitle">
+                      Get all documents
+                  </h2>
+              </div>
+              <div class="column">
+                  <pre><code class="javascript">{{ code }}</code></pre>
+                  <span class="icon is-button-borderless is-pulled-right">
+                      <i class="fas fa-play" data-function="create" onclick="api.getAll()"></i>
+                  </span>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="hero-foot">
+    <app-slide-nav-bottom></app-slide-nav-bottom>
+  </div>
+</section>
