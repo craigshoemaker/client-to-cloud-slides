@@ -13,6 +13,7 @@ export class CodeService {
     const segments = func.split('// ---');
     let code = segments[1];
     code = code.replace(/^\s+|\s+$/g, '');
+    code = code.replace(/\s*console\.log.*/gm, '');
 
     if (replacements) {
       replacements.forEach(item => {
