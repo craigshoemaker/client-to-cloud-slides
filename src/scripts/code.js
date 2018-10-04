@@ -7,14 +7,17 @@ document.getElementsByTagName("head")[0].appendChild(pouchScript);
 
 const hlScript = document.createElement('script');
 hlScript.src = '/src/scripts/highlightjs/highlight.pack.js';
+hlScript.onload = () => {
+    hljs.initHighlightingOnLoad();
+};
 document.getElementsByTagName("head")[0].appendChild(hlScript);
 
 
-setTimeout(() => {
-    if (hljs && hljs.initHighlightingOnLoad) {
-        hljs.initHighlightingOnLoad();
-    }
-}, 1000);
+// setTimeout(() => {
+//     if (hljs && hljs.initHighlightingOnLoad) {
+//         hljs.initHighlightingOnLoad();
+//     }
+// }, 1000);
 
 var api = {
 
@@ -107,6 +110,26 @@ const response = await localDB.allDocs(options);
         console.log(response);
 
         return response.rows;
+    },
+
+    resolveImmediateConflict: async (selectedSource) => {
+// ---
+let title;
+let id;
+
+if (/database/i.test(selectedSource)) {
+    title = databaseRecord.title;
+    id = databaseRecord._id;
+} else {
+    title = incomingRecord.title;
+    id = incomingRecord._id;
+}
+
+const todo = await this.data.get(this.source, id);
+todo.title = title;
+
+const response = await this.data.saveTodo(this.source, todo);
+// ---
     },
 
     resolveEventualConflict: async (id, winningRevId) => {

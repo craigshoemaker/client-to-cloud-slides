@@ -1,21 +1,20 @@
 <section [ngClass]="{ 'hero': true, 'is-fullheight': true, 'is-alternate': isAlternate }"
-        id="api-init">
+          id="api-immediate-conflict">
   <div class="hero-body">
       <div class="container">
           <div class="columns">
               <div class="column">
                   <h1 class="title">
-                      Initialize
+                    Resolve immediate conflict
                   </h1>
                   <h2 class="subtitle">
-                      Create database instances
+                      
                   </h2>
               </div>
               <div class="column">
                   <pre><code class="javascript">{{ code }}</code></pre>
-                  <p class="has-text-grey-light has-text-right">Uses <a href="https://github.com/pouchdb-community/pouchdb-authentication#pouchdb-authentication" tabindex="-1" target="_blank">pouchdb-authentication</a></p>
                   <span class="icon is-button-borderless is-pulled-right">
-                      <i class="fas fa-play" data-function="create" onclick="api.init('api-demos', 'http://localhost:5984/api-demos')"></i>
+                      <i class="fas fa-play" data-function="create" onclick="api.get()"></i>
                   </span>
               </div>
           </div>

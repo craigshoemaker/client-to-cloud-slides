@@ -73,7 +73,7 @@ export class LocalConflictComponent extends BaseComponent implements OnInit {
       let title;
       let id;
 
-      if (selectedSource === 'database') {
+      if (/database/i.test(selectedSource)) {
         title = this.options.database.title;
         id = this.options.database._id;
       } else {
