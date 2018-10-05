@@ -154,6 +154,32 @@ const conflicts = revIds.map(rev => {
 
 const response = await localDB.bulkDocs(conflicts);
 // ---
-    }
+    },
 
+    initializeDemo: async () => {
+        let counter = 0;
+
+        localDB = new PouchDB('api-demos');
+
+        await localDB.destroy();
+
+        localDB = new PouchDB('api-demos');
+
+        await localDB.bulkDocs([
+            {
+                _id: (new Date()).toISOString() + (counter++).toString(),
+                title: 'Don\'t trust atoms, they make up everything.'
+            },
+            {
+                _id: (new Date()).toISOString() + (counter++).toString(),
+                title: 'I used to be addicted to soap, but I\'m clean now.'
+            },
+            {
+                _id: (new Date()).toISOString() + (counter++).toString(),
+                title: 'R.I.P boiled water. You will be mist!'
+            }
+        ]);
+
+        console.log('The local database is seeded');
+    }
 };

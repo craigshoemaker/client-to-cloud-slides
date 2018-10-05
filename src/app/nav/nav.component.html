@@ -34,10 +34,13 @@
 
 <section id="remote-server-configuration" *ngIf="showConfig" class="message is-dark remote-server-configuration">
   <div class="message-header">
-      <p>Remote Server Configuration</p>
+      <p>Configuration</p>
       <button class="delete" aria-label="delete" (click)="toggleConfig($event)"></button>
   </div>
   <div class="message-body">
+
+    <div class="has-text-right"><button class="button has-no-border has-no-background-color" 
+        onclick="api.initializeDemo()"><i class="fas fa-cogs has-text-grey-light"></i></button></div>
 
       <p>Load config: <button class="is-link" (click)="setConfig('local')">local</button> | <button class="is-link" (click)="setConfig('azure')">Azure</button></p>
 

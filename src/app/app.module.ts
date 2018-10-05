@@ -23,6 +23,7 @@ import { ApiAlldocsComponent } from './api-alldocs/api-alldocs.component';
 import { ApiBulkdocsComponent } from './api-bulkdocs/api-bulkdocs.component';
 import { ApiImmediateConflictComponent } from './api-immediate-conflict/api-immediate-conflict.component';
 import { SlideTakeawaysComponent } from './slide-takeaways/slide-takeaways.component';
+import { SlideAnatomyComponent } from './slide-anatomy/slide-anatomy.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SlideTakeawaysComponent } from './slide-takeaways/slide-takeaways.compo
     ApiAlldocsComponent,
     ApiBulkdocsComponent,
     ApiImmediateConflictComponent,
-    SlideTakeawaysComponent
+    SlideTakeawaysComponent,
+    SlideAnatomyComponent
   ],
   imports: [
     BrowserModule,

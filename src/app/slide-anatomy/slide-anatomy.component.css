@@ -1,0 +1,22 @@
+.anatomy {
+    font-size: 2em;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+}
+
+.value {
+    color: #df5000;
+}
+
+.key {
+    display: inline-block;
+    color: #795da3;
+    margin-left: 85px;
+}
+
+.rev-number {
+    color: hsl(217, 71%, 53%);
+}
+
+.unique-id {
+    color: hsl(0, 0%, 71%);
+}
