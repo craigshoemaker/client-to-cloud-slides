@@ -11,7 +11,6 @@ import { NavComponent } from './nav/nav.component';
 import { CrudComponent } from './crud/crud.component';
 import { LocalConflictComponent } from './local-conflict/local-conflict.component';
 import { SyncComponent } from './sync/sync.component';
-import { SyncConflictComponent } from './sync-conflict/sync-conflict.component';
 import { SyncConflictComparerComponent } from './sync-conflict-comparer/sync-conflict-comparer.component';
 import { SlideNavBottomComponent } from './slide-nav-bottom/slide-nav-bottom.component';
 import { ApiInitComponent } from './api-init/api-init.component';
@@ -23,6 +22,7 @@ import { ApiSyncComponent } from './api-sync/api-sync.component';
 import { ApiAlldocsComponent } from './api-alldocs/api-alldocs.component';
 import { ApiBulkdocsComponent } from './api-bulkdocs/api-bulkdocs.component';
 import { ApiImmediateConflictComponent } from './api-immediate-conflict/api-immediate-conflict.component';
+import { SlideTakeawaysComponent } from './slide-takeaways/slide-takeaways.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { ApiImmediateConflictComponent } from './api-immediate-conflict/api-imme
     CrudComponent,
     LocalConflictComponent,
     SyncComponent,
-    SyncConflictComponent,
     SyncConflictComparerComponent,
     SlideNavBottomComponent,
     ApiInitComponent,
@@ -45,7 +44,8 @@ import { ApiImmediateConflictComponent } from './api-immediate-conflict/api-imme
     ApiSyncComponent,
     ApiAlldocsComponent,
     ApiBulkdocsComponent,
-    ApiImmediateConflictComponent
+    ApiImmediateConflictComponent,
+    SlideTakeawaysComponent
   ],
   imports: [
     BrowserModule,
