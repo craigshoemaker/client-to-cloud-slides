@@ -19,7 +19,11 @@ export class TodoEditorComponent implements OnInit {
   @Input()
   showGetButton = false;
 
+  isRemote = false;
+  isLocal = true;
+
   showRemoteLink = false;
+
   remoteAdminURL = '';
   todos: any = [];
 
@@ -46,6 +50,8 @@ export class TodoEditorComponent implements OnInit {
     });
 
     this.showRemoteLink = (this.source === 'remote');
+    this.isRemote = this.source === 'remote';
+    this.isLocal = this.source === 'local';
   }
 
   remoteSourceChanged() {

@@ -1,4 +1,4 @@
-<div class="message is-success">
+<div [ngClass]="{ 'message': true, 'is-success': isLocal, 'is-dark': isRemote }">
   <div class="message-header">
       <p>Todos - (<span *ngIf="!showRemoteLink">local</span>
         <a *ngIf="showRemoteLink" href="{{ remoteAdminURL }}" tabindex="-1" target="_blank">{{ remoteAdminURL }}</a>)</p>
