@@ -2,16 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { ConfigService, IConfigurationItem } from '../config.service';
 import { MessageService } from '../message.service';
 import { BaseComponent } from '../base-component/base.component';
+import { BrowserService } from '../browser.service';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent extends BaseComponent implements IConfigurationItem {
+export class NavComponent extends BaseComponent implements IConfigurationItem, OnInit {
 
   showConfig = false;
   showNav = false;
+
+  browserName = '';
 
   username: string;
   password: string;
@@ -19,11 +22,15 @@ export class NavComponent extends BaseComponent implements IConfigurationItem {
   port: number;
   adminURL: string;
 
-  constructor(private config: ConfigService, private messenger: MessageService) {
+  constructor(private config: ConfigService, private messenger: MessageService, private browser: BrowserService) {
     super();
     this.messenger.subscribe(this.messenger.events.config.loaded, () => {
       this.setConfig();
     });
+  }
+
+  ngOnInit() {
+    this.browserName = this.browser.getName();
   }
 
   setConfig(remoteLocation: string = 'local') {

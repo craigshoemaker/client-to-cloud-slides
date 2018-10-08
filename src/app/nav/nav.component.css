@@ -2,6 +2,11 @@
     width: 500px;
 }
 
+.browser-name {
+    display: inline-block;
+    margin-top: 5px;
+}
+
 .nav-panel button {
     border:0px;
     background-color: transparent;

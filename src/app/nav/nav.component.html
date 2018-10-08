@@ -1,7 +1,14 @@
 <div class="top-bar">
-    <div class="has-text-right">
-        <button class="button has-no-border has-no-background-color" (click)="toggleConfig($event)"><i class="fas fa-cog has-text-grey-light"></i></button>
-        <button class="button has-no-border has-no-background-color" (click)="toggleNav($event)"><i class="fas fa-ellipsis-h has-text-grey-light"></i></button>
+    <div class="columns">
+        <div class="column">
+            <span class="browser-name has-text-grey-light has-text-weight-bold">{{ browserName }}</span>
+        </div>
+        <div class="column">
+            <div class="has-text-right">
+                <button class="button has-no-border has-no-background-color" (click)="toggleConfig($event)"><i class="fas fa-cog has-text-grey-light"></i></button>
+                <button class="button has-no-border has-no-background-color" (click)="toggleNav($event)"><i class="fas fa-ellipsis-h has-text-grey-light"></i></button>
+            </div>
+        </div>
     </div>
 </div>
 
