@@ -24,6 +24,7 @@ import { ApiBulkdocsComponent } from './api-bulkdocs/api-bulkdocs.component';
 import { ApiImmediateConflictComponent } from './api-immediate-conflict/api-immediate-conflict.component';
 import { SlideTakeawaysComponent } from './slide-takeaways/slide-takeaways.component';
 import { SlideAnatomyComponent } from './slide-anatomy/slide-anatomy.component';
+import { SlideGithubComponent } from './slide-github/slide-github.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SlideAnatomyComponent } from './slide-anatomy/slide-anatomy.component';
     ApiBulkdocsComponent,
     ApiImmediateConflictComponent,
     SlideTakeawaysComponent,
-    SlideAnatomyComponent
+    SlideAnatomyComponent,
+    SlideGithubComponent
   ],
   imports: [
     BrowserModule,
