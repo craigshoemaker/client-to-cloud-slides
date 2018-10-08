@@ -11,6 +11,7 @@ import { BaseComponent } from '../base-component/base.component';
 export class NavComponent extends BaseComponent implements IConfigurationItem {
 
   showConfig = false;
+  showNav = false;
 
   username: string;
   password: string;
@@ -38,6 +39,10 @@ export class NavComponent extends BaseComponent implements IConfigurationItem {
 
   toggleConfig() {
     this.showConfig = !this.showConfig;
+  }
+
+  toggleNav() {
+    this.showNav = !this.showNav;
   }
 
   sectionChanged(e) {

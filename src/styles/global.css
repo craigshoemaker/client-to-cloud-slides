@@ -43,7 +43,8 @@ pre code {
     border-bottom: #ccc 1px solid;
 }
 
-.remote-server-configuration {
+.remote-server-configuration,
+.nav-panel {
     position: fixed;
     top: 20px;
     right: 5%;

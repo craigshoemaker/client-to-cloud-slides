@@ -1,35 +1,41 @@
 <div class="top-bar">
-  <div class="columns">
-      <div class="column is-one-third is-offset-two-thirds">
-          <div class="columns">
-              <div class="column is-one-fifth">
-                  <button class="button has-no-border has-no-background-color" (click)="toggleConfig($event)"><i class="fas fa-cog has-text-grey-light"></i></button>
-              </div>
-              <div class="column">
-                  <div class="select">
-                      <select (change)="sectionChanged($event)">
-                          <option value="">-- Navigate --</option>
-                          <option value="introduction">Introduction</option>
-                          <option value="">&nbsp;Demos</option>
-                          <option value="demo-crud">&nbsp;- CRUD</option>
-                          <option value="demo-conflicts-local">&nbsp;- Conflicts (local)</option>
-                          <option value="demo-sync">&nbsp;- Sync</option>
-                          <option value="sync-conflict-comparer">&nbsp;- Conflicts during Sync</option>
-                          <option value="">&nbsp;API</option>
-                          <option value="api-init">&nbsp;- Initialization</option>
-                          <option value="api-add">&nbsp;- put (create)</option>
-                          <option value="api-get">&nbsp;- get</option>
-                          <option value="api-update">&nbsp;- put (update)</option>
-                          <option value="api-delete">&nbsp;- delete</option>
-                          <option value="api-sync">&nbsp;- sync</option>
-                          <option value="end">Conclusion</option>
-                      </select>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="has-text-right">
+        <button class="button has-no-border has-no-background-color" (click)="toggleConfig($event)"><i class="fas fa-cog has-text-grey-light"></i></button>
+        <button class="button has-no-border has-no-background-color" (click)="toggleNav($event)"><i class="fas fa-ellipsis-h has-text-grey-light"></i></button>
+    </div>
 </div>
+
+<section *ngIf="showNav" class="message is-info nav-panel">
+    <div class="message-header">
+        <p>Demos and Code Samples</p>
+        <button class="delete" aria-label="delete" (click)="toggleNav($event)"></button>
+    </div>
+    <div class="message-body">
+        <div class="columns">
+            <div class="column">
+                <h3 class="is-size-5">Demos</h3>
+                <ul>
+                    <li><button class="button" (click)="scrollToSectionById('demo-sync')">Sync</button></li>
+                    <li><button class="button" (click)="scrollToSectionById('demo-conflicts-local')">Immediate Conflict</button></li>
+                    <li><button class="button" (click)="scrollToSectionById('sync-conflict-comparer')">Eventual Conflict</button></li>
+
+                </ul>
+            </div>
+            <div class="column">
+                <h3 class="is-size-5">API Samples</h3>
+                <ul>
+                    <li><button class="button" (click)="scrollToSectionById('api-init')">Initialize</button></li>
+                    <li><button class="button" (click)="scrollToSectionById('api-add')">put (add)</button></li>
+                    <li><button class="button" (click)="scrollToSectionById('api-get')">get</button></li>
+                    <li><button class="button" (click)="scrollToSectionById('api-update')">put (update)</button></li>
+                    <li><button class="button" (click)="scrollToSectionById('api-delete')">remove</button></li>
+                    <li><button class="button" (click)="scrollToSectionById('api-alldocs')">allDocs</button></li>
+                    <li><button class="button" (click)="scrollToSectionById('api-sync')">sync</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section id="remote-server-configuration" *ngIf="showConfig" class="message is-dark remote-server-configuration">
   <div class="message-header">

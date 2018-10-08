@@ -1,0 +1,9 @@
+.nav-panel {
+    width: 500px;
+}
+
+.nav-panel button {
+    border:0px;
+    background-color: transparent;
+    padding:0;
+}

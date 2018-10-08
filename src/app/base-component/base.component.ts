@@ -58,6 +58,11 @@ export class BaseComponent {
     this.scrollToSection(nextSlide);
   }
 
+  scrollToSectionById(id) {
+    const el = document.getElementById(id);
+    this.scrollToSection(el);
+  }
+
   scrollToSection(el) {
     const y = el.getBoundingClientRect().top + window.scrollY;
     window.scroll({
