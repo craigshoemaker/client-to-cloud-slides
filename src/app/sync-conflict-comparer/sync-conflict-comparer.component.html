@@ -2,7 +2,9 @@
     <div class="hero-body">
         <div class="container">
             <div class="column">
-                <button class="button push-right-sm" (click)="sync()" tabindex="-1">Sync</button>
+                <button class="button push-right-sm" (click)="sync()" tabindex="-1">
+                    <i class="fas fa-sync-alt has-text-grey-light"></i>&nbsp;Sync
+                </button>
                 <span class="sync-label push-right-sm" *ngIf="isSyncing">Syncing...</span>
                 <button *ngIf="isSyncing" class="button" (click)="syncCancel()" tabindex="-1">Cancel</button>
             </div>
@@ -21,7 +23,7 @@
                                 <tr *ngFor="let conflict of conflicts">
                                     <td>
                                         <div class="has-text-weight-bold is-size-6">{{ conflict.ok.title}}</div>
-                                        <div class="has-text-grey-light is-size-7">rev: {{ conflict.ok._rev }}</div>
+                                        <div class="has-text-grey-light is-size-7">rev: <span class="has-text-grey">{{ conflict.ok._rev }}</span></div>
                                     </td>
                                     <td>
                                         <button class="button" (click)="resolve($event, conflict.ok)">Select</button>

@@ -1,7 +1,7 @@
 <div class="top-bar">
     <div class="columns">
         <div class="column">
-            <span class="browser-name has-text-grey-light has-text-weight-bold">{{ browserName }}</span>
+            <span *ngIf="browserName" class="browser-name tag is-light">{{ browserName }}</span>
         </div>
         <div class="column">
             <div class="has-text-right">
