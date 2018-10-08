@@ -25,6 +25,7 @@ import { ApiImmediateConflictComponent } from './api-immediate-conflict/api-imme
 import { SlideTakeawaysComponent } from './slide-takeaways/slide-takeaways.component';
 import { SlideAnatomyComponent } from './slide-anatomy/slide-anatomy.component';
 import { SlideGithubComponent } from './slide-github/slide-github.component';
+import { SlideLifiComponent } from './slide-lifi/slide-lifi.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { SlideGithubComponent } from './slide-github/slide-github.component';
     ApiImmediateConflictComponent,
     SlideTakeawaysComponent,
     SlideAnatomyComponent,
-    SlideGithubComponent
+    SlideGithubComponent,
+    SlideLifiComponent
   ],
   imports: [
     BrowserModule,
