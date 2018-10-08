@@ -11,7 +11,6 @@ import { MessageService } from '../message.service';
 export class SyncComponent extends BaseComponent implements OnInit {
 
   isSyncing = false;
-  doLiveSync = false;
 
   constructor(private data: DataService, private messenger: MessageService) {
     super();
@@ -28,6 +27,11 @@ export class SyncComponent extends BaseComponent implements OnInit {
     this.isSyncing = false;
   }
 
+  liveSync() {
+    this.isSyncing = true;
+    this.data.sync(true);
+  }
+
   syncCancel() {
     this.data.syncCancel();
     this.isSyncing = false;
@@ -35,7 +39,7 @@ export class SyncComponent extends BaseComponent implements OnInit {
 
   sync() {
     this.isSyncing = true;
-    this.data.sync(this.doLiveSync);
+    this.data.sync(false);
   }
 
 }

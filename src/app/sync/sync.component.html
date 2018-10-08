@@ -3,10 +3,13 @@
         <div class="container">
             <div class="columns">
                 <div class="column">
-                    <span class="button has-no-border push-right-sm">
-                        <input type="checkbox" tabindex="-1" class="checkbox push-right-sm" [(ngModel)]="doLiveSync" id="live-checkbox"> <label for="live-checkbox">Live</label>
-                    </span>
-                    <button class="button push-right-sm" (click)="sync()" tabindex="-1">Sync</button>
+                    <button class="button" tabindex="-1" (click)="liveSync()">
+                        <i class="fas fa-sync-alt has-text-grey-light"></i> Live Sync
+                    </button>
+                    <button class="button push-right-sm" (click)="sync()" tabindex="-1">
+                        <i class="fas fa-sync-alt has-text-grey-light"></i>
+                        Sync
+                    </button>
                     <span class="sync-label push-right-sm" *ngIf="isSyncing">Syncing...</span>
                     <button *ngIf="isSyncing" class="button" (click)="syncCancel()" tabindex="-1">Cancel</button>
                 </div>

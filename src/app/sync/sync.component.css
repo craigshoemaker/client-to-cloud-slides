@@ -10,3 +10,12 @@
 label {
     cursor: pointer;
 }
+
+button {
+    margin-right: 20px;
+}
+
+button i {
+    display: inline-block;
+    margin-right: 8px;
+}
