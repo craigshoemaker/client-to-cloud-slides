@@ -26,6 +26,8 @@ import { SlideTakeawaysComponent } from './slide-takeaways/slide-takeaways.compo
 import { SlideAnatomyComponent } from './slide-anatomy/slide-anatomy.component';
 import { SlideGithubComponent } from './slide-github/slide-github.component';
 import { SlideLifiComponent } from './slide-lifi/slide-lifi.component';
+import { SlideXouchdbComponent } from './slide-xouchdb/slide-xouchdb.component';
+import { SlideConflictKindsComponent } from './slide-conflict-kinds/slide-conflict-kinds.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { SlideLifiComponent } from './slide-lifi/slide-lifi.component';
     SlideTakeawaysComponent,
     SlideAnatomyComponent,
     SlideGithubComponent,
-    SlideLifiComponent
+    SlideLifiComponent,
+    SlideXouchdbComponent,
+    SlideConflictKindsComponent
   ],
   imports: [
     BrowserModule,

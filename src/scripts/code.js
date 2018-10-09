@@ -12,13 +12,6 @@ hlScript.onload = () => {
 };
 document.getElementsByTagName("head")[0].appendChild(hlScript);
 
-
-// setTimeout(() => {
-//     if (hljs && hljs.initHighlightingOnLoad) {
-//         hljs.initHighlightingOnLoad();
-//     }
-// }, 1000);
-
 var api = {
 
     init: async (databaseName, remoteURL) => {

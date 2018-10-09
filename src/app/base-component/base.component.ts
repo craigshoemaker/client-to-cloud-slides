@@ -9,7 +9,13 @@ export class BaseComponent {
   @Input()
   isAlternate = false;
 
+  uniqueId = 0;
+
   constructor() { }
+
+  getRandomId() {
+    return Math.floor(Math.random() * (10 + 1));
+  }
 
   scrollToThisSection(e) {
     const el = e.currentTarget;

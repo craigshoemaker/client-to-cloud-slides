@@ -13,6 +13,7 @@ export class CrudComponent extends BaseComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.uniqueId = this.getRandomId();
   }
 
 }
