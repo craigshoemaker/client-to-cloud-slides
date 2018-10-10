@@ -65,6 +65,7 @@ const response = await localDB.put(user);
     delete: async () => {
 // ---
 const user = await localDB.get('craig');
+console.log(user);
 const response = await localDB.remove(user);
 // ---
         console.log(response);
@@ -118,10 +119,10 @@ if (/database/i.test(selectedSource)) {
     id = incomingRecord._id;
 }
 
-const todo = await this.data.get(this.source, id);
-todo.title = title;
+const item = localDB.get(id);
+item.title = title;
 
-const response = await this.data.saveTodo(this.source, todo);
+const response = await localDB.put(item);
 // ---
     },
 
