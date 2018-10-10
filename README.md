@@ -44,3 +44,8 @@ The contents of *secrets.json.example* are as follows:
 ## Intent
 
 This application is built with for the sole purpose for presenting the *Client to the Cloud* talk. While you may learn about how to use [PouchDB](http://pouchdb.com) from this application, much of the code is implemented specifically for presenting to an audience. Make sure to [read the docs](https://pouchdb.com/guides/) for guidance on how to best use PouchDB.
+
+
+## Resource
+
+- [12 pro tips for better code with PouchDB](https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html)
