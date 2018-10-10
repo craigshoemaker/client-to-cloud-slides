@@ -48,4 +48,7 @@ This application is built with for the sole purpose for presenting the *Client t
 
 ## Resource
 
+- [PouchDB](http://pouchdb.com)
+- [CouchDB](http://couchdb.apache.org/)
+- [Bitnami CouchDB Stack For Microsoft Azure](https://docs.bitnami.com/azure/infrastructure/couchdb/)
 - [12 pro tips for better code with PouchDB](https://pouchdb.com/2014/06/17/12-pro-tips-for-better-code-with-pouchdb.html)

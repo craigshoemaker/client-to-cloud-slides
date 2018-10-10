@@ -128,19 +128,21 @@ const response = await localDB.put(item);
 
     resolveEventualConflict: async (id, winningRevId) => {
 // ---
-const options = {
-    conflicts: true
-};
+const options = { conflicts: true };
 
-const todo = await localDB.get(id, options);
+// get item with conflicts
+const item = await localDB.get(id, options);
 
-let revIds = todo._conflicts;
-revIds.push(todo._rev);
+
+// filter out wanted item
+let revIds = item._conflicts;
+revIds.push(item._rev);
 revIds = revIds.filter(conflictId => conflictId !== winningRevId);
 
+// create collection of items to delete
 const conflicts = revIds.map(rev => {
     return {
-        _id: todo._id,
+        _id: item._id,
         _rev: rev,
         _deleted: true
     };

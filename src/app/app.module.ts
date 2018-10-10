@@ -28,6 +28,7 @@ import { SlideGithubComponent } from './slide-github/slide-github.component';
 import { SlideLifiComponent } from './slide-lifi/slide-lifi.component';
 import { SlideXouchdbComponent } from './slide-xouchdb/slide-xouchdb.component';
 import { SlideConflictKindsComponent } from './slide-conflict-kinds/slide-conflict-kinds.component';
+import { SlideLastComponent } from './slide-last/slide-last.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { SlideConflictKindsComponent } from './slide-conflict-kinds/slide-confli
     SlideGithubComponent,
     SlideLifiComponent,
     SlideXouchdbComponent,
-    SlideConflictKindsComponent
+    SlideConflictKindsComponent,
+    SlideLastComponent
   ],
   imports: [
     BrowserModule,
