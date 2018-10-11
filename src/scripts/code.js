@@ -99,6 +99,7 @@ const options = {
 };
 
 const response = await localDB.allDocs(options);
+
 // response.rows;
 // ---
         console.log(response);

@@ -70,7 +70,7 @@ export class DataService {
     return rows;
   }
 
-  async saveTodo(source: string, todo: Todo) {
+  async saveObject(source: string, todo: Todo) {
     try {
       const response = await this[source].put(todo);
     } catch (e) {

@@ -64,7 +64,7 @@ export class LocalConflictComponent extends BaseComponent implements OnInit {
 
   save() {
     this.todo.title = this.title;
-    this.data.saveTodo(this.source, this.todo);
+    this.data.saveObject(this.source, this.todo);
   }
 
   async resolveLocalConflict(selectedSource: string) {
@@ -84,7 +84,7 @@ export class LocalConflictComponent extends BaseComponent implements OnInit {
       const todo = await this.data.get(this.source, id);
       todo.title = title;
 
-      const response = await this.data.saveTodo(this.source, todo);
+      const response = await this.data.saveObject(this.source, todo);
 
       this.titleFinal = this.title;
       this.title = '';
