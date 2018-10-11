@@ -134,7 +134,6 @@ const options = { conflicts: true };
 // get item with conflicts
 const item = await localDB.get(id, options);
 
-
 // filter out wanted item
 let revIds = item._conflicts;
 revIds.push(item._rev);
