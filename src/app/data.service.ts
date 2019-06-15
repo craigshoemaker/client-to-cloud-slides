@@ -61,6 +61,7 @@ export class DataService {
       };
 
       const response = await this[source].allDocs(options);
+
       rows = response.rows.map(row => {
         const r = row.doc;
         r.hasConflicts = !!r._conflicts && r._conflicts.length > 0;

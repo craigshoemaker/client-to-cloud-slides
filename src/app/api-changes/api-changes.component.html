@@ -1,19 +1,21 @@
 <section [ngClass]="{ 'hero': true, 'is-fullheight': true, 'is-alternate': isAlternate }"
-          id="api-bulkdocs">
+          id="api-changes">
   <div class="hero-body">
       <div class="container">
           <div class="columns">
               <div class="column">
                   <h1 class="title">
-                    Resolve eventual conflicts
+                    <kbd>changes</kbd>
                   </h1>
                   <h2 class="subtitle">
-                      Use <kbd>bulkDocs</kbd> to delete unwanted versions
+                      Listen for changes in the database
                   </h2>
                   <pre><code class="javascript">{{ code }}</code></pre>
-                  <!-- <span class="icon is-button-borderless is-pulled-right">
-                      <i class="fas fa-play" data-function="create" onclick="api.getAll()"></i>
-                  </span> -->
+                  <!--
+                      <span class="icon is-button-borderless is-pulled-right">
+                          <i class="fas fa-play" data-function="create" onclick="api.getAll()"></i>
+                    </span>
+                  -->
               </div>
           </div>
       </div>

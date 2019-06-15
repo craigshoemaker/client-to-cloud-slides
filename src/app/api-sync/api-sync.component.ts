@@ -16,7 +16,9 @@ export class ApiSyncComponent extends BaseComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.code = this.codeService.get('sync');
+    let code = this.codeService.get('sync');
+    code = code.replace(/e \=\>\)/g, 'e => console.log)');
+    this.code = code;
   }
 
 }

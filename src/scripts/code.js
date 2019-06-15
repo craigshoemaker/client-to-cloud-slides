@@ -28,6 +28,8 @@ remoteDB = new PouchDB(remoteURL, {
 // ---
         console.log(localDB);
         console.log(remoteDB);
+
+        api.initializeDemo();
     },
 
     get: async () => {
@@ -71,6 +73,14 @@ const response = await localDB.remove(user);
         console.log(response);
     },
 
+    listenForChanges: () => {
+// ---
+localDB.changes({ since: 'now', live: true })
+    .on('change', api.getAll)
+    .on('error', console.log);
+// ---
+    },
+
     sync: () => {
 // ---
 const options = {
@@ -80,12 +90,12 @@ const options = {
 
 const syncer = localDB.sync(remoteDB, options);
 
-syncer.on('change', (e) => { console.log('change', e); });
-syncer.on('paused', (e) => { console.log('paused', e); });
-syncer.on('active', (e) => { console.log('active', e); });
-syncer.on('denied', (e) => { console.log('denied', e); });
-syncer.on('complete', (e) => { console.log('complete', e); });
-syncer.on('error', (e) => { console.log('error', e); });
+syncer.on('change', e => console.log('change', e));
+syncer.on('paused', e => console.log('paused', e));
+syncer.on('active', e => console.log('active', e));
+syncer.on('denied', e => console.log('denied', e));
+syncer.on('complete', e => console.log('complete', e));
+syncer.on('error', e => console.log('error', e));
 
 // syncer.cancel();
 // ---
@@ -102,6 +112,11 @@ const response = await localDB.allDocs(options);
 
 // response.rows;
 // ---
+
+        response.rows.forEach(row => {
+            console.log(row.doc.title);
+        });
+
         console.log(response);
 
         return response.rows;
@@ -109,18 +124,11 @@ const response = await localDB.allDocs(options);
 
     resolveImmediateConflict: async (selectedSource) => {
 // ---
-let title;
-let id;
+let title = /database/i.test(selectedSource) ?
+            databaseRecord.title :
+            incomingRecord.title;
 
-if (/database/i.test(selectedSource)) {
-    title = databaseRecord.title;
-    id = databaseRecord._id;
-} else {
-    title = incomingRecord.title;
-    id = incomingRecord._id;
-}
-
-const item = localDB.get(id);
+const item = localDB.get(databaseRecord.id);
 item.title = title;
 
 const response = await localDB.put(item);
@@ -129,17 +137,15 @@ const response = await localDB.put(item);
 
     resolveEventualConflict: async (id, winningRevId) => {
 // ---
-const options = { conflicts: true };
-
 // get item with conflicts
-const item = await localDB.get(id, options);
+const item = await localDB.get(id, { conflicts: true });
 
-// filter out wanted item
+// filter out item you want to keep
 let revIds = item._conflicts;
 revIds.push(item._rev);
 revIds = revIds.filter(conflictId => conflictId !== winningRevId);
 
-// create collection of items to delete
+// delete the rest of the items
 const conflicts = revIds.map(rev => {
     return {
         _id: item._id,

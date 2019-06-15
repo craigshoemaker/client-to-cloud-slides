@@ -20,6 +20,7 @@ import { ApiUpdateComponent } from './api-update/api-update.component';
 import { ApiDeleteComponent } from './api-delete/api-delete.component';
 import { ApiSyncComponent } from './api-sync/api-sync.component';
 import { ApiAlldocsComponent } from './api-alldocs/api-alldocs.component';
+import { ApiChangesComponent } from './api-changes/api-changes.component';
 import { ApiBulkdocsComponent } from './api-bulkdocs/api-bulkdocs.component';
 import { ApiImmediateConflictComponent } from './api-immediate-conflict/api-immediate-conflict.component';
 import { SlideTakeawaysComponent } from './slide-takeaways/slide-takeaways.component';
@@ -49,6 +50,7 @@ import { SlideLastComponent } from './slide-last/slide-last.component';
     ApiDeleteComponent,
     ApiSyncComponent,
     ApiAlldocsComponent,
+    ApiChangesComponent,
     ApiBulkdocsComponent,
     ApiImmediateConflictComponent,
     SlideTakeawaysComponent,
